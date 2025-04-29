@@ -3,10 +3,8 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: grid;
-  max-inline-size: 375px;
   block-size: auto;
   grid-template-columns: 1fr;
-  justify-content: center;
   background-attachment: fixed;
   background-image: var(--bg-image);
   background-repeat: no-repeat;
@@ -18,38 +16,40 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
-  padding: calc(var(--padding) * 2) 22px;
+  padding: var(--padding);
   margin-bottom: 40px;
-  min-height: 668px;
+  min-block-size: 668px;
 }
 
 .decorated-zone::before {
   content: "";
-  position: relative;
+  position: absolute;
   inline-size: 25px;
   block-size: 25px;
   justify-self: end;
   border-inline-end: 1px solid var(--menu-color);
   border-block-start: 1px solid var(--menu-color);
+  margin-top: 20px;
 }
 
 .decorated-zone::after {
   content: "";
-  position: relative;
+  position: absolute;
   inline-size: 25px;
   block-size: 25px;
   justify-self: start;
   align-self: end;
   border-inline-start: 1px solid var(--btn-color, #ff0070);
   border-block-end: 1px solid var(--btn-color, #ff0070);
+  margin-bottom: 20px;
 }
 
 .header__rec {
   position: absolute;
   display: flex;
   gap: 19px;
-  inset-block-start: 16px;
-  inset-inline-end: calc(var(--padding) + 46px);
+  inset-block-start: 6px;
+  inset-inline-end: calc(var(--padding) + 56px);
 }
 
 .header__rec::before {
@@ -61,9 +61,8 @@
   font-size: var(--text-size);
   line-height: 25px;
   color: var(--accent-color, #ff0070);
-  padding-inline-end: var(--padding);
-  margin-top: 2px;
-  margin-right: -12px;
+  margin-top: 4px;
+  margin-right: -8px;
 }
 
 .header__rec::after {
@@ -75,21 +74,19 @@
   background-color: var(--accent-color, #ff0070);
   box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
   margin-top: 12px;
-  margin-right: -45px;
+  margin-right: -47px;
 }
 
 .header__theme-menu {
-  display: grid;
   justify-self: end;
-  margin-block-end: 4.3rem;
+  align-self: center;
 }
 
 .header__theme-menu-list {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   justify-content: flex-end;
-  gap: calc(var(--padding) + 2px);
+  gap: 10px;
 }
 
 .header__theme-menu-item {
@@ -98,10 +95,8 @@
 }
 
 .header__theme-menu-button {
-  padding-block-start: 3.5px;
-  padding-inline-end: 11px;
-  padding-block-end: 0;
-  padding-inline-start: 11px;
+  padding-inline-end: 13px;
+  padding-inline-start: 9px;
   text-align: center;
   border: none;
   background: transparent;
@@ -113,18 +108,19 @@
 .header__theme-menu-button_active {
   pointer-events: none;
   outline: 1px solid var(--btn-color);
+  padding: 0 12px;
 }
 
 .header__theme-menu-button:focus {
-  outline: none;
-}
-
-.header__theme-menu-button:focus-visible {
   border-bottom: 1px solid var(--btn-color);
 }
 
+.header__theme-menu-button:focus-visible {
+  outline: none;
+}
+
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid var(--hover);
   cursor: pointer;
 }
 
@@ -136,14 +132,18 @@
   font-size: var(--text-size);
 }
 
+.header .title-decor {
+  margin: 0;
+  align-self: center;
+}
 .title {
   font-family: var(--main-font, IBM Plex Mono);
   font-weight: 700;
   line-height: 83%;
+  align-self: center;
   color: var(--title-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
-  margin-bottom: 55px;
 }
 
 .title::after {
@@ -166,8 +166,20 @@ h3 {
 }
 
 .link__effect {
-  text-shadow: 2px 2px #ff8dcb;
+  text-shadow: 2px 2px var(--accent-color);
   text-decoration: none;
+}
+
+.link__effect:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link__effect:focus-visible {
+  outline: none;
+}
+
+.link__effect:focus {
+  outline: var(--text-color) 1px solid;
 }
 
 .content {
@@ -175,7 +187,7 @@ h3 {
 }
 
 .content-text {
-  padding: 0 calc(var(--padding) * 2 + 2px);
+  padding: 0 var(--padding);
 }
 
 .first {
@@ -247,19 +259,18 @@ h3 {
 
 .footer {
   position: relative;
-  min-block-size: 100vh;
+  block-size: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   margin: 40px 0 2px;
-  padding: calc(var(--padding) * 2);
+  padding: var(--padding);
   min-height: 668px;
 }
 
 .footer__title {
   text-shadow: 2px 2px 0 var(--accent-color);
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.25rem, 5.7688rem + 6.32vw, 9.8125rem);
   margin-bottom: 0;
-  align-self: center;
   justify-self: center;
   line-height: 82.5%;
 }
@@ -271,25 +282,19 @@ h3 {
 
   .header {
     margin-bottom: 60px;
+    padding: 20px;
   }
 
   .header .title-decor {
-    inline-size: 47vw;
+    inline-size: 47.5vw;
     justify-self: end;
-    margin-bottom: 13.5vh;
   }
 
   .header__theme-menu {
     display: flex;
     justify-content: flex-end;
-    margin-block-start: -12.3em;
   }
 
-  .header__theme-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-  }
 
   .title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -306,7 +311,7 @@ h3 {
 
   .second .questions {
     display: grid;
-    grid-template-columns: 33% 67%;
+    grid-template-columns: 32% 68%;
     padding-inline-start: 0;
   }
 
@@ -314,6 +319,9 @@ h3 {
     margin-bottom: 80px;
   }
 
+  .content-text {
+    padding: 0 20px;
+  }
   .description-list-first {
     padding: 0 10px 0 0;
   }
@@ -375,12 +383,10 @@ h3 {
 
   .header .title-decor {
     inline-size: 48vw;
-    margin-bottom: 11.4vh;
   }
 
   .title {
     position: relative;
-    bottom: -28px;
   }
 
   .header__theme-menu {
@@ -394,7 +400,6 @@ h3 {
     flex-direction: row;
     justify-self: center;
     gap: 15px;
-    bottom: 78px;
   }
 
   .text-section .description {
