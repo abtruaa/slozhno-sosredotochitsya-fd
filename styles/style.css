@@ -164,10 +164,6 @@ h4 {
   font-size: var(--text-size);
 }
 
-h3 {
-  color: var(--sub-text-color);
-}
-
 .link__effect {
   text-shadow: 2px 2px var(--accent-color);
   text-decoration: none;
@@ -455,7 +451,7 @@ h3 {
     margin-bottom: 60px;
   }
   
-  .content{
+  .content {
     padding: 0 20px;
   }
 
