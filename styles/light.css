@@ -4,18 +4,7 @@
   переключая тему
 */
 
-.theme_light .header__theme-menu-button:hover {
-  outline: 1px solid #32312d66;
-}
 
-.theme_light .header__theme-menu-button:focus {
-  outline: none;
-}
-
-.theme_light .header__theme-menu-button:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 1px;
-}
 
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
@@ -30,6 +19,7 @@
   --bg-color: #fff1f7;
   --menu-color: #353430;
   --hover: #32312D66;
+  --sub-text-color: #353430;
 }
 
 .theme-light .page {
@@ -39,6 +29,22 @@
   }
 }
 
-.page.theme-light {
-  --sub-text-color: #353430;
+@media (prefers-color-scheme: light) {
+  
+  :root {
+    /* сохраните этот селектор в приведённом виде.
+      Так стили написанные ниже будут иметь больший вес,
+      чем стили в медиазапросе предпочтений пользователя
+    */
+    --title-color: #ffc2e6;
+    --text-color: #353430;
+    --accent-color: #ff8dcb;
+    --btn-color: #353430;
+    --bg-image: url(../images/cover-image-light.png);
+    --bg-color: #fff1f7;
+    --menu-color: #353430;
+  }
+  .header__rec {
+    display: none;
+  }
 }
