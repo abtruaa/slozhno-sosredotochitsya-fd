@@ -202,6 +202,7 @@ h4 {
 .questions {
   padding: 0px 9px 19px 0;
   color: var(--menu-color);
+  line-height: 23.4px;
 }
 
 .main-text {
