@@ -7,6 +7,8 @@
   grid-template-columns: 1fr;
   background-attachment: fixed;
   background-image: var(--bg-image);
+  background-color: var(--bg-color);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -29,7 +31,8 @@
   justify-self: end;
   border-inline-end: 1px solid var(--menu-color);
   border-block-start: 1px solid var(--menu-color);
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .decorated-zone::after {
@@ -41,7 +44,8 @@
   align-self: end;
   border-inline-start: 1px solid var(--btn-color, #ff0070);
   border-block-end: 1px solid var(--btn-color, #ff0070);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .header__rec {
@@ -108,7 +112,7 @@
 .header__theme-menu-button_active {
   pointer-events: none;
   outline: 1px solid var(--btn-color);
-  padding: 0 12px;
+  padding: 0 13px;
 }
 
 .header__theme-menu-button:focus {
@@ -201,7 +205,7 @@ h3 {
 }
 
 .questions {
-  padding: 0px 10px 19px 0;
+  padding: 0px 9px 19px 0;
   color: var(--menu-color);
 }
 
@@ -284,7 +288,16 @@ h3 {
     margin-bottom: 60px;
     padding: 20px;
   }
+  
+  .decorated-zone::after {
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
 
+  .decorated-zone::before {
+    margin-top: 20px;
+    margin-right: 20px;
+  }
   .header .title-decor {
     inline-size: 47.5vw;
     justify-self: end;
@@ -362,7 +375,7 @@ h3 {
   }
 
   .footer {
-    padding-top: 60px;
+    margin-top: 60px;
   }
 
   .footer__title {
@@ -374,11 +387,10 @@ h3 {
 @media (width >= 1024px) {
   .page {
     min-inline-size: 1024px;
-    padding: 0 20px;
   }
 
   .header {
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .header .title-decor {
@@ -402,6 +414,16 @@ h3 {
     gap: 15px;
   }
 
+  .header__rec::before {
+    margin-top: 15px;
+    margin-right: -6px;
+  }
+
+  .header__rec::after {
+    margin-top: 22px;
+    margin-right: -39px;
+  }
+
   .text-section .description {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -423,6 +445,10 @@ h3 {
 
   .second {
     margin-bottom: 60px;
+  }
+  
+  .content{
+    padding: 0 20px;
   }
 
   .content-text {
@@ -469,14 +495,18 @@ h3 {
     grid-row: 3/5;
   }
 
-  .footer {
-    padding: 40px 0 0 0;
-  }
-
   .footer__title {
     text-shadow: 2px 2px 0 var(--color);
     margin: 0;
     bottom: 0;
+  }
+  
+  footer .decorated-zone::before {
+    margin-top: 38px;
+  }
+
+  footer .decorated-zone::after {
+    margin-bottom: 1px;
   }
 }
 
