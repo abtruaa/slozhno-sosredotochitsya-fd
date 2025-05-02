@@ -7,7 +7,9 @@
     <meta name="color-scheme" content="dark light" />
     <title>Сложно сосредоточиться</title>
     <script src="./scripts/script.js"></script>
-    <link rel="icon" href="./images/favicon.ico" />
+    <link rel="icon" href="./images/favicon.ico" sizes="any">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png">
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
@@ -46,19 +48,19 @@
       </nav>
       <h1 class="title">no focus</h1>
       <h2 class="title-decor">
-        Что делать, когда не можешь делать ничего <br />
-        Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+        <div>Что делать, когда не можешь делать ничего </div>
+        <div>Или почему нам так сложно сконцентрироваться, особенно когда очень надо</div>
       </h2>
     </header>
     <main class="content">
       <div class="content-text">
-        <section class="first">
-          <h3 class="questions text-section">
+        <section class="columned">
+          <h2 class="questions text-section">
             Почему сосредоточиться так сложно
-          </h3>
-          <ul class="description-list-first">
+          </h2>
+          <ul class="description-list">
             <li class="text-section description">
-              <h2 class="title-decor">Многозадачность</h2>
+              <h3 class="title-decor">Многозадачность</h3>
               <p class="main-text">
                 Особенно сложно сосредоточиться, когда задач много и все они —
                 важные. Где же легендарная многозадачность, когда она так нужна
@@ -67,6 +69,7 @@
                 <a
                   href="https://dana.org/news-and-insights/"
                   class="link__effect"
+                  target="_blank"
                   >выяснили</a
                 >, что мозгу тяжело концентрироваться даже на двух делах
                 одновременно. А когда в поле внимания попадает несколько важных
@@ -76,7 +79,7 @@
               </p>
             </li>
             <li class="description">
-              <h2 class="title-decor">Дофамин</h2>
+              <h3 class="title-decor">Дофамин</h3>
               <p class="main-text">
                 С гормонами стресса всё понятно, но дальше — ещё интереснее. В
                 нашей невозможности сосредоточиться замешана и полная
@@ -91,13 +94,13 @@
             </li>
           </ul>
         </section>
-        <section class="second">
-          <h3 class="questions text-section">
+        <section class="rowed">
+          <h2 class="questions text-section">
             Что снижает концентрацию внимания?
-          </h3>
-          <ul class="description-list">
+          </h2>
+          <ul class="description-list__rowed">
             <li class="text-section description">
-              <h2 class="title-decor">Многозадачность</h2>
+              <h3 class="title-decor">Многозадачность</h3>
               <p class="main-text">
                 Как концентрация может снижаться из-за… концентрации? Любая
                 стрессовая ситуация (и резко меняющийся мир в целом) заставляет
@@ -108,7 +111,7 @@
               </p>
             </li>
             <li class="text-section description">
-              <h2 class="title-decor">Еда</h2>
+              <h3 class="title-decor">Еда</h3>
               <p class="main-text">
                 «Быстрые углеводы» — сахар, белый хлеб, сладости — молниеносно
                 доставляют в мозг энергию и помогают ему лучше работать. Но
@@ -119,7 +122,7 @@
               </p>
             </li>
             <li class="description">
-              <h2 class="title-decor">Гаджеты</h2>
+              <h3 class="title-decor">Гаджеты</h3>
               <p class="main-text">
                 Да-да, это та самая ситуация, когда на экране ноутбука — код, в
                 наушниках — подкаст, а на компьютере фоном — ещё и видео с
@@ -133,16 +136,16 @@
             </li>
           </ul>
         </section>
-        <section class="first">
-          <h3 class="questions text-section">
+        <section class="columned">
+          <h2 class="questions text-section">
             Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх
             секунд)
-          </h3>
-          <ul class="description-list-first">
+          </h2>
+          <ul class="description-list">
             <li class="text-section">
-              <h2 class="title-decor advice-subheading">
+              <h3 class="title-decor advice-subheading">
                 5 простых (на самом деле не очень) советов
-              </h2>
+              </h3>
             </li>
             <li class="text-section">
               <h4 class="title-decor advice">Представьте небо и облака</h4>
@@ -173,6 +176,7 @@
                 <a
                   href="https://www.sciencedirect.com/science/article/abs/pii/S0272494415000328"
                   class="link__effect"
+                  target="_blank"
                   >показал</a
                 >, что созерцание природы повышает концентрацию, в то время как
                 после просмотра городских пейзажей она наоборот понижается.
@@ -204,7 +208,7 @@
           </ul>
         </section>
         <section class="pictures">
-          <h2 class="title-decor">А можно в картинках?</h2>
+          <h3 class="title-decor">А можно в картинках?</h3>
           <div class="gallery">
             <figure class="gallery__item">
               <img
@@ -251,7 +255,7 @@
       </div>
     </main>
     <footer class="footer decorated-zone content">
-      <h1 class="title footer__title">focus</h1>
+      <h2 class="title footer__title">focus</h2>
     </footer>
   </body>
 </html>

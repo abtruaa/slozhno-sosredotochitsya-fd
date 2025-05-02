@@ -1,4 +1,12 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+h2,
+h3,
+h4 {
+  color: var(--heading-color);
+  font-family: var(--main-font, monospace, Arial, sans-serif);
+  font-weight: var(--weight-subheading);
+  font-size: var(--text-size);
+}
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
@@ -60,7 +68,7 @@
   content: "REC";
   text-transform: uppercase;
   display: block;
-  font-family: var(--main-font, IBM Plex Mono, Arial);
+  font-family: var(--main-font, monospace, Arial, sans-serif);
   font-weight: var(--weight-main);
   font-size: var(--text-size);
   line-height: 25px;
@@ -104,7 +112,7 @@
   text-align: center;
   border: none;
   background: transparent;
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace, Arial, sans-serif);
   text-transform: lowercase;
   color: var(--menu-color);
 }
@@ -140,7 +148,7 @@
   align-self: center;
 }
 .title {
-  font-family: var(--main-font, IBM Plex Mono);
+  font-family: var(--main-font,monospace, Arial, sans-serif);
   font-weight: 700;
   line-height: 83%;
   align-self: center;
@@ -153,15 +161,6 @@
   content: "";
   position: absolute;
   text-shadow: 4px 4px var(--accent-color, #ff0070);
-}
-
-h2,
-h3,
-h4 {
-  color: var(--heading-color);
-  font-family: var(--main-font);
-  font-weight: var(--weight-subheading);
-  font-size: var(--text-size);
 }
 
 .link__effect {
@@ -181,21 +180,17 @@ h4 {
   outline: var(--text-color) 1px solid;
 }
 
-.content {
-  background-color: var(--bg-color, #000028);
-}
-
 .content-text {
   padding: 0 var(--padding);
 }
 
-.first {
+.columned {
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: 30px;
 }
 
-.second {
+.rowed {
   margin-bottom: 50px;
 }
 
@@ -206,7 +201,7 @@ h4 {
 }
 
 .main-text {
-  font-family: var(--main-font, IBM Plex Mono);
+  font-family: var(--main-font, monospace, Arial, sans-serif);
   font-weight: var(--weight-main);
   color: var(--text-color, #f1b2ce);
   font-size: var(--text-size);
@@ -277,10 +272,6 @@ h4 {
 }
 
 @media (width >= 768px) {
-  .page {
-    min-block-size: 768px;
-  }
-
   .header {
     margin-bottom: 60px;
     padding: 20px;
@@ -319,29 +310,29 @@ h4 {
     margin-inline-start: calc(var(--padding) * (-2));
   }
   
-  .first {
+  .columned {
     display: grid;
     grid-template-columns: 33% 67%;
-    gap: 18px;
+    gap: 12px;
     padding-inline-end: 5px;
     margin-bottom: 60px;
   }
 
-  .second .questions {
+  .rowed .questions {
     display: grid;
     grid-template-columns: 32% 68%;
     padding-inline-start: 0;
   }
 
-  .second {
+  .rowed {
     margin-bottom: 80px;
   }
 
   .content-text {
     padding: 0 20px;
   }
-  .description-list-first {
-    padding: 0 12px 0 0;
+  .description-list {
+    padding: 0 7px 0 5px;
   }
 
   .pictures .title-decor {
@@ -392,6 +383,7 @@ h4 {
 @media (width >= 1024px) {
   .page {
     min-inline-size: 1024px;
+    justify-self: center;
   }
 
   .header {
@@ -437,19 +429,15 @@ h4 {
   }
 
   .questions {
-    padding: 0 0 20px 8px;
+    padding: 0 0 20px 0;
   }
 
   .title-decor {
     grid-column: 1;
   }
 
-  .first {
-    margin-left: -8px;
-  }
-
-  .second {
-    margin-bottom: 60px;
+  .rowed {
+    margin-bottom: 40px;
   }
   
   .content {
@@ -465,15 +453,14 @@ h4 {
   }
 
   .description-list {
+    padding: 0 7px 0 0;
+  }
+
+  .description-list__rowed {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
-
-  .description-list-first {
-    padding-right: 13px;
-  }
-
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -515,19 +502,3 @@ h4 {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  
-  :root {
-    /* сохраните этот селектор в приведённом виде.
-      Так стили написанные ниже будут иметь больший вес,
-      чем стили в медиазапросе предпочтений пользователя
-    */
-    --title-color: #ffc2e6;
-    --text-color: #353430;
-    --accent-color: #ff8dcb;
-    --btn-color: #353430;
-    --bg-image: url(../images/cover-image-light.png);
-    --bg-color: #fff1f7;
-    --menu-color: #353430;
-  }
-}

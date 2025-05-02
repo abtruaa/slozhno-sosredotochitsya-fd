@@ -44,6 +44,7 @@
     --bg-image: url(../images/cover-image-light.png);
     --bg-color: #fff1f7;
     --menu-color: #353430;
+    --hover:#32312D66;
   }
   .header__rec {
     display: none;
