@@ -1,1 +1,1 @@
-https://github.com/abtruaa/slozhno-sosredotochitsya-fd#
+https://github.com/abtruaa/slozhno-sosredotochitsya-fd
